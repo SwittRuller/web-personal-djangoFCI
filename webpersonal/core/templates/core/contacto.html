@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="{% static 'core/css/contacto.css' %}">
+</head>
+
+<body>
+    <section class="layout">
+        <div class="header">
+            <div class="logo">
+                <a href="{% url 'principal' %}">
+                    <img class="imagen-principal" src="{% static 'core/img/logo.svg' %}" alt="logotipo">
+                </a>
+            </div>
+            <div class="derecha">
+                <nav class="navegacion">
+                    <a href="{% url 'nosotros' %}">Nosotros</a>
+                    <a href="{% url 'productos' %}">Productos</a>
+                    <a href="{% url 'contacto' %}">Contacto</a>
+                </nav>
+            </div>
+        </div>
+        <section>
+            <div class="main">
+                <h1 style="text-align: center; font-size: 3rem; margin-top: -50px;">Contacto</h1>
+                <form action="{% url 'contacto' %}" method="post" class="formulario">
+                    {% csrf_token %}
+                    <label class="label" for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" required><br>
+                    <label class="label" for="correo">Correo electrónico:</label><br>
+                    <input type="email" id="correo" name="correo" required><br>
+                    <label class="label" for="producto">Producto:</label><br>
+                    <input type="text" id="producto" name="producto" required><br>
+                    <label class="label" for="comentario">Comentario:</label><br>
+                    <textarea id="comentario" name="comentario" required></textarea><br>
+                    <input type="submit" value="Enviar" style="text-align: center !important;">
+                </form>
+            </div>
+        </section>
+        <section class="final">
+            <div class="footer">
+                <div class="iconos-footer">
+                    <a href="www.facebook.com">
+                        <img class="iconos-footer" src="{% static 'core/img/facebook.png' %}" alt="icono-facebook">
+                    </a>
+                    <a href="">
+                        <img class="iconos-footer" src="{% static 'core/img/whatsapp.png' %}" alt="icono-whatsapp">
+                    </a>
+                    <a href="www.instagram.com">
+                        <img class="iconos-footer" src="{% static 'core/img/instagram.png' %}" alt="icono-instagram">
+                    </a>
+                    <a href="www.youtube.com">
+                        <img class="iconos-footer" src="{% static 'core/img/youtube.png' %}" alt="icono-telegram">
+                    </a>
+                </div>
+                <div class="derechos">
+                    <h1>Derechos Reservados 2023 &copy;</h1>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>

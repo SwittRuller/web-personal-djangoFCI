@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}{% endblock%} | TecnologyRuller</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginas.css' %}">
+</head>
+
+<body>
+    <section class="layout">
+        <div class="header">
+            <div class="logo">
+                <a href="{% url 'principal' %}">
+                    <img class="imagen-principal" src="{% static 'core/img/logo.svg' %}" alt="logotipo">
+                </a>
+            </div>
+            <div class="derecha">
+                <nav class="navegacion">
+                    <a href="{% url 'nosotros' %}">Nosotros</a>
+                    <a href="{% url 'productos' %}">Productos</a>
+                    <a href="{% url 'contacto' %}">Contacto</a>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="main">
+            <section>
+
+                <div class="nosotros-n">
+                    <h1 style="font-size: 3rem;">Más Sobre Nosotros</h1>
+                    <div class="iconos-nosotros-n">
+                        <div class="icono-n">
+                            <img src="{% static 'core/img/Security_Isometric.svg' %}" alt="Icono seguridad" class="imagen-icono" style="width: 200px !important; height: 200px !important;">
+                            <h3>Seguridad</h3>
+                            <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur
+                                obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis
+                                laudantium. Voluptates?</p>
+                        </div>
+                        <div class="icono-n">
+                            <img src=" {% static 'core/img/Money jar_Outline.svg' %}" alt="Icono Precio" class="imagen-icono"
+                                style="width: 200px !important; height: 200px !important;">
+                            <h3>Precio</h3>
+                            <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur
+                                obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis
+                                laudantium. Voluptates?</p>
+                        </div>
+                        <div class="icono-n">
+                            <img  src="{% static 'core/img/Time_Monochromatic.svg' %}"alt="Icono Tiempo" class="imagen-icono"
+                                style="width: 100px !important; height: 100px !important; margin-left: 50px;">
+                            <h3 style="margin-left: 50px;">A Tiempo</h3>
+                            <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur
+                                obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis
+                                laudantium. Voluptates?</p>
+                        </div>
+                    </div>
+                </div>
+                </fieldset>
+            </section>
+        </div>
+        <section class="final">
+            <div class="footer">
+                <div class="iconos-footer">
+                    <a href="www.facebook.com">
+                        <img class="iconos-footer" src="{% static 'core/img/facebook.png' %}" alt="icono-facebook">
+                    </a>
+        
+                    <a href="">
+                        <img class="iconos-footer" src="{% static 'core/img/whatsapp.png' %}" alt="icono-whatsapp">
+                    </a>
+        
+                    <a href="www.instagram.com">
+                        <img class="iconos-footer" src=" {% static 'core/img/instagram.png' %}" alt="icono-instagram">
+                    </a>
+        
+                    <a href="www.youtube.com">
+                        <img class="iconos-footer" src="{% static 'core/img/youtube.png' %}" alt="icono-telegram">
+                    </a>
+                </div>
+                <div class="derechos">
+                    <h1>Derechos Reservados 2023 &copy;</h1>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>

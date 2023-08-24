@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="log" href="">
+  <title>{% block title%}{% endblock%} | TecnologyRuller</title>
+  <link rel="stylesheet" href="{% static 'core/css/principal.css' %}">
+</head>
+<body>
+  <header class="header-principal" style="background-image: url('{% static 'core/img/inicio-imagen.avif' %}')">
+    <div class="logo">
+      <a href="{% url 'principal' %}">
+        <img class="imagen-principal" src="{% static 'core/img/logo.svg' %}" alt="logotipo">
+      </a>
+    </div>
+    <div class="derecha">
+      <nav class="navegacion">
+        <a href="{% url 'nosotros' %}">Nosotros</a>
+        <a href="{% url 'productos' %}">Productos</a>
+        <a href="{% url 'contacto' %}">Contacto</a>
+      </nav>
+    </div>
+    <div class="titulo-principal">
+      <h1> ELECTRONYCRULLER</h1>
+    </div>
+    <div class="frase-principal">
+      <p>Donde los electrodomesticos son de calidad</p>
+    </div>
+  </header>
+  <div class="body-principal">
+    <fieldset class="contenedor">
+      <legend class="legend">
+        <b>Productos</b>
+      </legend>
+      <ul class="habilidad">
+        <a href="{% url 'productos' %}">
+          <li>Lavadora</li>
+        </a>
+        <a href="{% url 'productos' %}">
+          <li>Refrigeradora</li>
+        </a>
+        <a href="{% url 'productos' %}">
+          <li>Microondas</li>
+        </a>
+        <a href="{% url 'productos' %}">
+          <li>Televisor</li>
+        </a>
+        <a href="{% url 'productos' &}">
+          <li>Licuadora</li>
+        </a>
+        <a href="{% url 'productos' &}">
+          <li>Cocina</li>
+        </a>
+      </ul>
+    </fieldset>
+    <fieldset class="conte-imagen-1">
+      <legend class="legend-1">
+        <b> Mas Vendido </b>
+      </legend>
+ 
+      <section class="imagen-cont">
+      {% for lavadora in lavadoras%}
+        <fieldset class="mas-vendido">
+          <img class="img-vendido" src="{{lavadora.image.url}}" alt="imagen-lavaodra">
+          <a href="">
+            <button class="boton-mas-vendido">
+              {{lavadora.title}}
+            </button>
+          </a>
+        </fieldset>
+        {% endfor %}
+        {% for microonda in microondas %}
+        <fieldset class="mas-vendido">
+          <img class="img-vendido" src="{{microonda.image.url}}" alt="imagen-microondas">
+          <a href="">
+            <button class="boton-mas-vendido">
+              {{microonda.title}}
+            </button>
+          </a>
+        </fieldset>
+        {% endfor %}
+        {% for refrigeradora in refrigeradoras %}
+        <fieldset class="mas-vendido">
+          <img class="img-vendido" src="{{refrigeradora.image.url}}" alt="imagen-refrigeradora">
+          <a href="">
+            <button class="boton-mas-vendido">
+              {{refrigeradora.title}}
+            </button>
+          </a>
+        </fieldset>
+        {% endfor %}
+        {% for televisor in televisors%}
+        <fieldset class="mas-vendido">
+          <img class="img-vendido" src="{{televisor.image.url}}" alt="imagen-microondas">
+          <a href="">
+            <button class="boton-mas-vendido">
+               {{televisor.title}}
+            </button>
+          </a>
+        </fieldset>
+        {% endfor %}
+        {% for licuadora in licuadoras %}
+        <fieldset class="mas-vendido">
+          <img class="img-vendido" src="{{licuadora.image.url}}" alt="imagen-microondas">
+          <a href="">
+            <button class="boton-mas-vendido">
+              {{licuadora.title}}
+            </button>
+          </a>
+        </fieldset>
+        {% endfor %}
+        {% for cocina in cocinas %}
+        <fieldset class="mas-vendido">
+          <img class="img-vendido" src="{{cocina.image.url}}" alt="imagen-microondas">
+          <a href="">
+            <button class="boton-mas-vendido">
+              {{cocina.title}}
+            </button>
+          </a>
+        </fieldset>
+        {% endfor %}
+      </section>
+    </fieldset>
+  </div>
+  <div class="nosotros">
+    <h1>Más Sobre Nosotros</h1>
+    <div class="iconos-nosotros">
+      <div class="icono">
+        <img src="{% static 'core/img/Security_Isometric.svg' %}" alt="Icono seguridad" class="imagen-icono">
+        <h3>Seguridad</h3>
+        <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
+      </div>
+      <div class="icono">
+        <img src=" {% static 'core/img/Money jar_Outline.svg' %}" alt="Icono Precio" class="imagen-icono">
+        <h3>Precio</h3>
+        <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
+      </div>
+      <div class="icono">
+        <img src="{% static 'core/img/Time_Monochromatic.svg' %}" alt="Icono Tiempo" class="imagen-icono">
+        <h3>A Tiempo</h3>
+        <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
+        </div>
+    </div>
+  </div>
+  <section class="contacto" style="background-image: url('{% static 'core/img/cocina-moderna-fondo.webp' %}')">
+
+    <h2 class="titulo-contacto">Encuentro la mejor opción en tecnología</h2>
+    <p class="parrafo-contacto">Llena el formulario de contacto y un asesor se pondrá en contacto contigo a la brevedad</p>
+    <a href="{% url 'contacto' %}" class="boton-contacto">Contactános</a>
+  </section>
+
+
+    <footer class="contenedor-footer">
+        <div class="iconos">
+            <a href="www.facebook.com">
+                <img class="iconos-footer" src="{% static 'core/img/facebook.png' %}" alt="icono-facebook">
+            </a>
+
+            <a href="">
+                <img class="iconos-footer" src="{% static 'core/img/whatsapp.png' %}" alt="icono-whatsapp">
+            </a>
+
+            <a href="www.instagram.com">
+                <img class="iconos-footer" src=" {% static 'core/img/instagram.png' %}" alt="icono-instagram">
+            </a>
+
+            <a href="www.youtube.com">
+                <img class="iconos-footer" src="{% static 'core/img/youtube.png' %}" alt="icono-telegram">
+            </a>
+        </div>
+        <div class="derechos">
+            <h1>Derechos Reservados 2023 &copy;</h1>
+        </div>
+    </footer>
+</body>
+
+</html>

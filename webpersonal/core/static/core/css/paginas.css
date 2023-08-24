@@ -1,0 +1,169 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #000000;
+}
+
+
+.layout {
+    width: 1366px;
+    height: 768px;
+
+    display: grid;
+    grid:
+        "header" auto "main" auto "footer" auto / 1fr;
+    gap: 8px;
+}
+
+.header {
+    background-color: rgb(101, 132, 139);
+    padding-top: 70px;
+    padding-bottom: 45px;
+    margin-bottom: 400px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.navegacion a {
+    top: -25px;
+    bottom: 40px;
+    font-size: 1.75rem;
+    position: relative;
+    left: 850px;
+    margin: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    color: #ffffff;
+}
+
+.logo {
+    position: absolute;
+    top: -110px;
+    left: 100px;
+
+    .imagen-principal {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+.main {
+    color: #ffffff;
+    margin-top: -400px;
+    position: relative;
+
+}
+
+.final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 170px;
+    background-color: #f2f2f2;
+}
+
+.footer{
+    width: 100%;
+    height: 100%;
+    padding-left: 850px;
+}
+.iconos-footer {
+    display: flex; 
+    justify-content: space-between; 
+    width: 40px;
+    margin-top: 20px;
+    margin-left: 50px;
+    padding-right:20px;
+}
+
+.derechos {
+    display: flex;
+    padding-left: 110px;
+    font-size: 1.5rem;
+    flex-direction: column;
+}
+
+.boton-atras{
+    padding: 10px;
+    background-color: rgb(101, 132, 139);
+    border-radius: 5px;
+    color: #000000;
+    position: relative ;
+    margin-top: 50px;
+    margin-left: -250px;
+    
+}
+
+.imagen-cont{
+    width: 50%;
+    padding-left: 300px;
+    padding-top: -40px;
+
+}
+
+.img-vendido{
+    padding-left: 70px;
+}
+
+.boton-contacto {
+    background-color: rgb(101, 132, 139);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.separador{
+    padding-top: 10px;
+    background-color: aliceblue;
+    color: #000000;
+    text-align: center;
+}
+
+.nosotros-n {
+    color: white;
+    text-align: center;
+}
+
+.icono-nosotros-n {
+    display: flex;
+}
+
+.icono-n {
+    text-align: center;
+    border-radius: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 20px;
+    height: 200px;
+    background-color: #fff;
+    flex: 1;
+    transition: .3s all ease;
+    border: 5px #fff solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+

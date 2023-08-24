@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Productos</title>
+  <link rel="shortcut icon" href="/img/logohead.png" type="image/png">
+  <link rel="stylesheet" href="{% static 'core/css/productos.css' %}">
+</head>
+<body>
+  <section class="layout">
+    <div class="header">
+     <div class="logo">
+      <a href="{% url 'principal' %}">
+        <img class="imagen-principal" src="{% static 'core/img/logo.svg' %}" alt="logotipo">
+      </a>
+    </div>
+      <div class="derecha">
+        <nav class="navegacion">
+          <a href="{% url 'nosotros' %}">Nosotros</a>
+        <a href="{% url 'productos' %}">Productos</a>
+        <a href="{% url 'contacto' %}">Contacto</a>
+        </nav>
+      </div>
+    </div>
+    <div class="main">
+      <fieldset class="conte-imagen-1">
+        <legend class="legend-1">
+          <b> Productos</b>
+        </legend>
+
+        <legend class="legend-2">
+          <b> Refrigeradoras</b>
+        </legend>
+    
+        <section class="imagen-cont">
+            {% for refrigeradora in refrigeradoras %}
+          <fieldset class="mas-vendido">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img class="img-vendido" src="{{refrigeradora.image.url}}" alt="imagen-refrigeradora-1" style="width: 400px; height: 450px; margin-left: -70px;">
+                </div>
+                <div class="flip-card-back">
+                  <p>
+                   {{refrigeradora.description}}
+                    <h2>${{refrigeradora.precio}}.00</h2>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <a href="{% url 'refrigeradora' refrigeradora.id %}">
+              <button class="boton-mas-vendido">
+                Ver Mas
+              </button>
+            </a>
+          </fieldset>
+    {% endfor %}
+    </section>
+        <legend class="legend-3" style="text-align: center  !important;">
+          <b> Microondas</b>
+        </legend>
+
+        <section class="imagen-cont">
+        {% for microonda in microondas %}
+          <fieldset class="mas-vendido">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img class="img-vendido" src="{{microonda.image.url}}" alt="imagen-refrigeradora-1" style="width: 270px; height: 220px; margin-left: -2px; margin-top: 130px;" >
+                </div>
+                <div class="flip-card-back">
+                   {{microonda.description}}
+                    <h2>${{microonda.precio}}.00</h2>
+                </div>
+              </div>
+            </div>
+            <a href="{% url 'microonda' microonda.id %}">
+              <button class="boton-mas-vendido">
+                Ver Mas
+              </button>
+            </a>
+           
+          </fieldset>
+            {% endfor %}
+        </section>
+
+        <legend class="legend-2" style="text-align: center !important;">
+          <b> Lavadora</b>
+        </legend>
+
+        <section class="imagen-cont">
+        {% for lavadora in lavadoras %}
+          <fieldset class="mas-vendido">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img class="img-vendido" src="{{lavadora.image.url}}" alt="imagen-refrigeradora-1" style="width: 350px; height: 450px; margin-left: -50px; margin-top: 20px;">
+                </div>
+                <div class="flip-card-back">
+                  {{lavadora.description}}
+                    <h2>${{lavadora.precio}}.00</h2>
+                </div>
+              </div>
+            </div>
+            <a href="{% url 'lavadora' lavadora.id %}">
+              <button class="boton-mas-vendido">
+                Ver Mas
+              </button>
+            </a>
+            
+          </fieldset>
+       {% endfor %}
+        </section>
+
+        <legend class="legend-2" style="text-align: center !important;">
+          <b> Televisor</b>
+        </legend>
+
+        <section class="imagen-cont">
+        {% for televisor in televisors %}
+          <fieldset class="mas-vendido">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img class="img-vendido" src="{{televisor.image.url}}" alt="imagen-refrigeradora-1" style="width: 325px; height: 375px; margin-left: -35px; margin-top: 40px;">
+                </div>
+                <div class="flip-card-back">
+                 {{televisor.description}}
+                    <h2>${{televisor.precio}}.00</h2>
+                </div>
+              </div>
+            </div>
+            <a href="{% url 'televisor' televisor.id %}">
+              <button class="boton-mas-vendido">
+                Ver Mas
+              </button>
+            </a>
+          
+          </fieldset>
+        {% endfor %}
+        </section>
+
+        <legend class="legend-2" style="text-align: center !important;">
+          <b> Licuadora</b>
+        </legend>
+
+        <section class="imagen-cont">
+        {% for licuadora in licuadoras %}
+          <fieldset class="mas-vendido">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img class="img-vendido" src="{{licuadora.image.url}}"  alt="imagen-refrigeradora-1" style="width: 350px; height: 400px; margin-left: -50px; margin-top: 30px;">
+                </div>
+                <div class="flip-card-back">
+                  {{licuadora.description}}
+                    <h2>${{licuadora.precio}}.00</h2>
+                </div>
+              </div>
+            </div>
+            <a href="{% url 'licuadora' licuadora.id %}">
+              <button class="boton-mas-vendido">
+                Ver Mas
+              </button>
+            </a>
+           
+          </fieldset>
+          {% endfor %}
+        </section>
+
+        <legend class="legend-2" style="text-align: center !important;">
+          <b> Cocina</b>
+        </legend>
+
+        <section class="imagen-cont">
+      {% for cocina in cocinas %}
+          <fieldset class="mas-vendido">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img class="img-vendido" src="{{cocina.image.url}}"  alt="imagen-refrigeradora-1" style="width: 250px; height: 400px; margin-left: -5px; margin-top: 30px;">
+                </div>
+                <div class="flip-card-back">
+                   {{cocina.description}}
+                    <h2>${{cocina.precio}}.00</h2>
+                </div>
+              </div>
+            </div>
+            <a href="{% url 'cocina' cocina.id %}">
+              <button class="boton-mas-vendido">
+                Ver Mas
+              </button>
+            </a>
+           
+          </fieldset>
+          {% endfor %}
+      </section>
+    </div>
+
+    <section class="final">
+    <div class="footer">
+      <div class="iconos-footer">
+         <a href="www.facebook.com">
+                <img class="iconos-footer" src="{% static 'core/img/facebook.png' %}" alt="icono-facebook">
+            </a>
+
+            <a href="">
+                <img class="iconos-footer" src="{% static 'core/img/whatsapp.png' %}" alt="icono-whatsapp">
+            </a>
+
+            <a href="www.instagram.com">
+                <img class="iconos-footer" src=" {% static 'core/img/instagram.png' %}" alt="icono-instagram">
+            </a>
+
+            <a href="www.youtube.com">
+                <img class="iconos-footer" src="{% static 'core/img/youtube.png' %}" alt="icono-telegram">
+            </a>
+    </div>
+    <div class="derechos">
+        <h1>Derechos Reservados 2023 &copy;</h1>
+    </div>
+    </div>
+  </section>
+  </section>
+</body>
+</html>
